@@ -2,4 +2,3 @@ streamlit
 pandas
 numpy
 gspread
-google.oauth2
