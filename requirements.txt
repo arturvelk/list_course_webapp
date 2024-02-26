@@ -1,0 +1,6 @@
+streamlit
+pandas
+numpy
+streamlit_gsheets
+gspread
+google.oauth2
