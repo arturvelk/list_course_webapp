@@ -100,25 +100,28 @@ st.session_state["name"]=st.text_input(
     disabled=st.session_state.disabled, 
     on_change=disable)
 
+
+
+#a csalás kiderülésének lehetősége, ha nagyobb mint 0.7, akkor beszopod
+st.session_state["strike"] = np.random.rand() > 0.7
+st.session_state["taxplace"] = np.where(np.random.rand() > 0.5, "nem ismert","InDaHouse Hungary Egyesület")
+
+
+
+tax_rate= 0.33
+
 st.write(f"""
-         Sziasztok!
+         Szabályok:
          Ahogy korábban is elmondtuk, a szabályok a következőek:
 
          * Minden táblázatban meg kell számolni hogy hány darab egyes van, ezt megadva léphetsz a következő táblázatra. Amennyiben eltalálod a számot, 200 Ft-ot kapsz. Amennyiben nem, akkor 0 Ft-ot.
          * A feladatok megoldására 25 perced van.
          * Amennyiben végeztél a feladatokkal, akkor az "adóbevallás" fülre kerülsz, itt döntheted el hogy mennyi adót szeretnél bevallani.
          * Az adó mértéke a jövedelmed 33%-a
-         * Az adó a te esetedben 
+         * Az adó célja a te esetedben {st.session_state["taxplace"]}
          * Az adócsalással való lebukás esélye 30%, büntetése hogy a jövedelmed 30%-a helyett a jövedelmed 60%-át vonjuk le
          * Amennyit a végén az ablak kiír, annyi jövedelmet vihetsz haza.
 """)
-
-#a csalás kiderülésének lehetősége, ha nagyobb mint 0.7, akkor beszopod
-st.session_state["strike"] = np.random.rand() > 0.7
-st.session_state["taxplace"] = np.random.rand() > 0.5
-
-tax_rate= 0.33
-
 
 # READ TASKS
 #feladatok megoldÃ¡sai
