@@ -96,11 +96,11 @@ if st.session_state["name"]:
     #form
     if st.session_state["task_num"] < len(task_data) :
         with st.form(key="task"):
-            num = task_solution[st.session_state["task_num"]]
-            img = Image.open(f"./pngs/{num}.png")
-            st.image(img)
+            #num = task_solution[st.session_state["task_num"]]
+            #img = Image.open(f"./pngs/{num}.png")
+            #st.image(img)
 
-            #st.dataframe(task_data[st.session_state["task_num"]])
+            st.dataframe(task_data[st.session_state["task_num"]])
 
             st.number_input(label="HÃ¡ny egyes van?", value=0, key="answer", format="%i")
 
