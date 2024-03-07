@@ -104,13 +104,13 @@ st.session_state["name"]=st.text_input(
 
 #a csalás kiderülésének lehetősége, ha nagyobb mint 0.7, akkor beszopod
 st.session_state["strike"] = np.random.rand() > 0.7
-st.session_state["taxplace"] = np.where(np.random.rand() > 0.5, "nem ismert","az InDaHouse Hungary Egyesületet támogatja")
+st.session_state["tax_prob"] = np.random.rand() > 0.5
+st.session_state["taxplace"] = np.where(st.session_state["tax_prob"] == True, "nem ismert","az InDaHouse Hungary Egyesületet támogatja")
 
 
 
 tax_rate= 0.33
 
-st.write(str(st.session_state["strike"]))
 
 st.write(f"""
          Szabályok:
@@ -240,7 +240,7 @@ if st.session_state["name"]:
                         #To read all the data just use the read_all_values() function and you get a list of lists.
                         asd = st.session_state["taxplace"] == "nem ismert"
 
-                        row = [st.session_state["name"], st.session_state["strike"],st.session_state["stolen_money"], st.session_state["got_home"], st.session_state["final"], st.session_state["amount"], asd]
+                        row = [st.session_state["name"], st.session_state["strike"],st.session_state["stolen_money"], st.session_state["got_home"], st.session_state["final"], st.session_state["amount"], st.session_state["tax_prob"]]
                         sh.append_row(row)
                         st.write("")
 
