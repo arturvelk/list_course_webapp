@@ -4,7 +4,7 @@ import numpy as np
 from streamlit_gsheets import GSheetsConnection
 import gspread
 from google.oauth2 import service_account
-from lista_import import *
+from lista_import import filenames, task_solution
 from PIL import Image
 
 
