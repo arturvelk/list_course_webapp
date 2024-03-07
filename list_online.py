@@ -120,7 +120,6 @@ st.write(f"""
          * A feladatok megoldására 25 perced van.
          * Amennyiben végeztél a feladatokkal, akkor az "adóbevallás" fülre kerülsz, itt döntheted el hogy mennyi adót szeretnél bevallani.
          * Az adó mértéke a jövedelmed 33%-a
-         * Az adó célja a te esetedben {st.session_state["taxplace"]}
          * Az adócsalással való lebukás esélye 30%, büntetése hogy a jövedelmed 30%-a helyett a jövedelmed 60%-át vonjuk le
          * Amennyit a végén az ablak kiír, annyi jövedelmet vihetsz haza.
 """)
@@ -240,7 +239,7 @@ if st.session_state["name"]:
                         #just use the append_row function of the sh object created.
                         #To read all the data just use the read_all_values() function and you get a list of lists.
 
-                        row = [st.session_state["name"], st.session_state["strike"],st.session_state["stolen_money"], st.session_state["got_home"], st.session_state["final"], st.session_state["amount"]]
+                        row = [st.session_state["name"], st.session_state["strike"],st.session_state["stolen_money"], st.session_state["got_home"], st.session_state["final"], st.session_state["amount"], st.session_state["taxplace"]]
                         sh.append_row(row)
                         st.write("")
 
