@@ -169,7 +169,7 @@ if st.session_state["name"]:
 
             #st.dataframe(task_data[st.session_state["task_num"]])
 
-            st.number_input(label="HÃ¡ny egyes van?", value=0, key="answer", format="%i")
+            st.number_input(label=f"./pngs/task_ ({num}).png", value=0, key="answer", format="%i")
 
             st.form_submit_button(
                 label="Submit",
