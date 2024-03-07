@@ -240,7 +240,7 @@ if st.session_state["name"]:
                         #To read all the data just use the read_all_values() function and you get a list of lists.
                         asd = np.where(st.session_state["taxplace"] == "nem ismert", 0,1)
 
-                        row = [st.session_state["name"], st.session_state["strike"],st.session_state["stolen_money"], st.session_state["got_home"], asd, st.session_state["amount"]]
+                        row = [st.session_state["name"], st.session_state["strike"],st.session_state["stolen_money"], st.session_state["got_home"], 5, st.session_state["amount"]]
                         sh.append_row(row)
                         st.write("")
 
