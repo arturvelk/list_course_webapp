@@ -164,6 +164,9 @@ if st.session_state["name"]:
             img = Image.open(f"./pngs/task_ ({num}).png")
             st.image(img)
 
+            st.write(f"./pngs/task_ ({num}).png")
+            st.write(filenames[st.session_state["task_num"]])
+
             #st.dataframe(task_data[st.session_state["task_num"]])
 
             st.number_input(label="HÃ¡ny egyes van?", value=0, key="answer", format="%i")
