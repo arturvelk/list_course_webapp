@@ -161,7 +161,6 @@ if st.session_state["name"]:
     if st.session_state["task_num"] < len(filenames) :
         with st.form(key="task"):
             num = task_solution[st.session_state["task_num"]+1]
-            print(f"./pngs/task_ ({num}).png")
             img = Image.open(f"./pngs/task_ ({num}).png")
             st.image(img)
 
