@@ -104,7 +104,7 @@ st.session_state["name"]=st.text_input(
 
 #a csalás kiderülésének lehetősége, ha nagyobb mint 0.7, akkor beszopod
 st.session_state["strike"] = np.random.rand() > 0.7
-st.session_state["taxplace"] = np.where(np.random.rand() > 0.5, "nem ismert","InDaHouse Hungary Egyesület")
+st.session_state["taxplace"] = np.where(np.random.rand() > 0.5, "nem ismert","az InDaHouse Hungary Egyesület")
 
 
 
@@ -222,7 +222,7 @@ if st.session_state["name"]:
                         if st.session_state["stolen_money"] == True:
                             if st.session_state["strike"] == True:
                                 st.session_state["got_home"] = st.session_state["amount"] - st.session_state["amount"]*tax_rate*2
-                                st.write("gratulálunk, lebuktál a csalással, hazavihető összeged: " + str(st.session_state["amount"] - st.session_state["amount"]*tax_rate*2))
+                                st.write("gratulálunk, a nav megbüntetett, hazavihető összeged: " + str(st.session_state["amount"] - st.session_state["amount"]*tax_rate*2))
                             else: 
                                 st.session_state["got_home"] = st.session_state["final"]
                                 st.write ("gratulálunk, kifizetésed: " + str(st.session_state["final"]))
