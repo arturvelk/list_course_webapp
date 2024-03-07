@@ -95,7 +95,7 @@ if st.session_state["name"]:
     #form
     if st.session_state["task_num"] < len(task_data) :
         with st.form(key="task"):
-            st.image(task_data[st.session_state["task_num"]])
+            st.markdown(task_data[st.session_state["task_num"]])
 
             st.number_input(label="HÃ¡ny egyes van?", value=0, key="answer", format="%i")
 
