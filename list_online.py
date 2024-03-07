@@ -110,6 +110,8 @@ st.session_state["taxplace"] = np.where(np.random.rand() > 0.5, "nem ismert","az
 
 tax_rate= 0.33
 
+st.write(str(st.session_state["strike"]))
+
 st.write(f"""
          Szabályok:
          Ahogy korábban is elmondtuk, a szabályok a következőek:
