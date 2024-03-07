@@ -104,7 +104,7 @@ st.session_state["name"]=st.text_input(
 
 #a csalás kiderülésének lehetősége, ha nagyobb mint 0.7, akkor beszopod
 st.session_state["strike"] = np.random.rand() > 0.7
-st.session_state["taxplace"] = np.where(np.random.rand() > 0.5, "nem ismert","az InDaHouse Hungary Egyesület")
+st.session_state["taxplace"] = np.where(np.random.rand() > 0.5, "nem ismert","az InDaHouse Hungary Egyesületet támogatja")
 
 
 
@@ -209,7 +209,7 @@ if st.session_state["name"]:
         with ph_2.container():
             with st.form ("tax_evasion", clear_on_submit=True):
                 st.write("Gyűjtött összeg: " + str(st.session_state["amount"]))
-                st.write("Az adód: "+ str(st.session_state["amount"]*tax_rate))
+                st.write(f"Az adód, ami a te esetedben {st.session_state["taxplace"]}"+ str(st.session_state["amount"]*tax_rate))
                 st.write("adózás utáni összeg: " + str(st.session_state["amount"]*(1-tax_rate)))
                 st.number_input("Mennyit tartanál meg belőle?",min_value= int(st.session_state["amount"]*(1-tax_rate)), max_value= st.session_state["amount"], key="final")
                 submitted = st.form_submit_button("Submit")
