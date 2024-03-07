@@ -210,7 +210,7 @@ if st.session_state["name"]:
         with ph_2.container():
             with st.form ("tax_evasion", clear_on_submit=True):
                 st.write("Gyűjtött összeg: " + str(st.session_state["amount"]))
-                st.write(f"Az adód, ami a te esetedben "+ str({st.session_state["taxplace"]}) +" " + str(st.session_state["amount"]*tax_rate))
+                st.write(f"Az adód, ami a te esetedben "+ str(st.session_state["taxplace"]) +" " + str(st.session_state["amount"]*tax_rate))
                 st.write("adózás utáni összeg: " + str(st.session_state["amount"]*(1-tax_rate)))
                 st.number_input("Mennyit tartanál meg belőle?",min_value= int(st.session_state["amount"]*(1-tax_rate)), max_value= st.session_state["amount"], key="final")
                 submitted = st.form_submit_button("Submit")
