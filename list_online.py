@@ -160,16 +160,14 @@ if st.session_state["name"]:
     #form
     if st.session_state["task_num"] < len(filenames) :
         with st.form(key="task"):
-            num = task_solution[st.session_state["task_num"]]
-            img = Image.open(f"./pngs/task_ ({num}).png")
+            num = filenames[st.session_state["task_num"]]
+            img = Image.open(f"./pngs/{num}.png")
             st.image(img)
 
-            st.write(f"./pngs/task_ ({num}).png")
-            st.write(filenames[st.session_state["task_num"]])
 
             #st.dataframe(task_data[st.session_state["task_num"]])
 
-            st.number_input(label=f"./pngs/task_ ({num}).png", value=0, key="answer", format="%i")
+            st.number_input(label="Hány egyes van a táblázatban?", value=0, key="answer", format="%i")
 
             st.form_submit_button(
                 label="Submit",
