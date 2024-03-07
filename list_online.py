@@ -211,6 +211,13 @@ if st.session_state["name"]:
             with st.form ("tax_evasion", clear_on_submit=True):
                 st.write("Gyűjtött összeg: " + str(st.session_state["amount"]))
                 st.write(f"Az adód, ami a te esetedben "+ str(st.session_state["taxplace"]) +": " + str(st.session_state["amount"]*tax_rate))
+
+                if st.session_state["tax_prob"] == True :
+                    st.write("""
+                         2014-ben, Perén tartottuk az első foglalkozásainkat. Először csak havonta, aztán kéthetente, 2015 tele óta pedig hetente tartunk fejlesztő foglalkozásokat az encsi kistérség szegénységbe születő, többségében cigány származású gyerekének.
+                         Önkénteseinknek két célja van: - tanulni, játszani a gyerekekkel, hogy egyre ügyesebbek, okosabbak legyenek. - bátorítani, szeretni őket, hogy amennyit csak tudunk, ellensúlyozzunk a társadalmi szintű rasszizmus negatív hatásaiból.
+                         """)
+
                 st.write("adózás utáni összeg: " + str(st.session_state["amount"]*(1-tax_rate)))
                 st.number_input("Mennyit tartanál meg belőle?",min_value= int(st.session_state["amount"]*(1-tax_rate)), max_value= st.session_state["amount"], key="final")
                 submitted = st.form_submit_button("Submit")
