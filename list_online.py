@@ -212,7 +212,7 @@ if st.session_state["name"]:
                 st.write("Gyűjtött összeg: " + str(st.session_state["amount"]))
                 st.write(f"Az adód, ami a te esetedben "+ str(st.session_state["taxplace"]) +": " + str(st.session_state["amount"]*tax_rate))
 
-                if st.session_state["tax_prob"]:
+                if st.session_state["taxplace"] == "az InDaHouse Hungary Egyesületet támogatja":
                     st.write("""
                              Az IndaHouse rövid bemutatása:
                          2014-ben, Perén tartottuk az első foglalkozásainkat. Először csak havonta, aztán kéthetente, 2015 tele óta pedig hetente tartunk fejlesztő foglalkozásokat az encsi kistérség szegénységbe születő, többségében cigány származású gyerekének.
