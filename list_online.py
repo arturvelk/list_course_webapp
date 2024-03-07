@@ -238,9 +238,9 @@ if st.session_state["name"]:
                         #Create a list the way you want and add the data to excel worksheet,
                         #just use the append_row function of the sh object created.
                         #To read all the data just use the read_all_values() function and you get a list of lists.
-                        asd = np.where(st.session_state["taxplace"] == "nem ismert", 0,1)
+                        asd = st.session_state["taxplace"] == "nem ismert"
 
-                        row = [st.session_state["name"], st.session_state["strike"],st.session_state["stolen_money"], st.session_state["got_home"], st.session_state["final"], st.session_state["amount"], 5]
+                        row = [st.session_state["name"], st.session_state["strike"],st.session_state["stolen_money"], st.session_state["got_home"], st.session_state["final"], st.session_state["amount"], asd]
                         sh.append_row(row)
                         st.write("")
 
