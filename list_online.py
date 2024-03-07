@@ -120,7 +120,7 @@ st.write(f"""
          * A feladatok megoldására 25 perced van.
          * Amennyiben végeztél a feladatokkal, akkor az "adóbevallás" fülre kerülsz, itt döntheted el hogy mennyi adót szeretnél bevallani.
          * Az adó mértéke a jövedelmed 33%-a
-         * Az adócsalással való lebukás esélye 30%, büntetése hogy a jövedelmed 30%-a helyett a jövedelmed 60%-át vonjuk le
+         * Az adócsalással való lebukás esélye 30%, büntetése hogy a jövedelmed 33%-a helyett a jövedelmed 66%-át vonjuk le
          * Amennyit a végén az ablak kiír, annyi jövedelmet vihetsz haza.
 """)
 
