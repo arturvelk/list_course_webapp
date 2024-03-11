@@ -106,7 +106,7 @@ st.session_state["name"]=st.text_input(
 st.session_state["strike"] = np.random.rand() > 0.7
 #st.session_state["strike_value"] = np.where(st.session_state["strike"] == True,1,0)
 st.session_state["tax_prob"] = np.random.rand() > 0.5
-value = st.session_state["tax_prob"] == True
+#value = st.session_state["tax_prob"] == True
 st.session_state["taxplace"] = np.where(st.session_state["tax_prob"] == True, "nem ismert","az InDaHouse Hungary Egyesületet támogatja")
 
 
@@ -254,7 +254,7 @@ if st.session_state["name"]:
                         #To read all the data just use the read_all_values() function and you get a list of lists.
                         asd = st.session_state["taxplace"] == "nem ismert"
 
-                        row = [st.session_state["name"], st.session_state["strike_value"],st.session_state["stolen_money"], st.session_state["got_home"], st.session_state["final"], st.session_state["amount"], value]
+                        row = [st.session_state["name"], st.session_state["strike_value"],st.session_state["stolen_money"], st.session_state["got_home"], st.session_state["final"], st.session_state["amount"], st.session_state["tax_prob"]]
                         sh.append_row(row)
                         st.write("")
 
