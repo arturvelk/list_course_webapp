@@ -104,9 +104,9 @@ st.session_state["name"]=st.text_input(
 
 #a csalás kiderülésének lehetősége, ha nagyobb mint 0.7, akkor beszopod
 st.session_state["strike"] = np.random.rand() > 0.7
-st.session_state["strike_value"] = np.where(st.session_state["strike"] == True,1,0)
+#st.session_state["strike_value"] = np.where(st.session_state["strike"] == True,1,0)
 st.session_state["tax_prob"] = np.random.rand() > 0.5
-st.session_state["tax_value"] = np.where(st.session_state["tax_prob"] == True, 1,0)
+st.session_state["tax_value"] =st.session_state["tax_prob"] == True
 st.session_state["taxplace"] = np.where(st.session_state["tax_prob"] == True, "nem ismert","az InDaHouse Hungary Egyesületet támogatja")
 
 
