@@ -203,7 +203,9 @@ if st.session_state["name"]:
     else:
         with ph.container():
             st.title ("II.Adózás")
-            st. write ("Gratulálunk! Végére értél az összes feladatnak.")
+            st. write ("""Gratulálunk! Végére értél az összes feladatnak.
+                       A következő részben, az "adóbevallásodat" fogod kitölteni. Megadtuk a munkával szerzett egyenlegedet, Adód mértékét és hogy mennyi a minimálisan hazavihető összeg (jövedelem - adó).
+                       """)
             #st.write("Disclaimer a következő részről")
 
     # megadja mennyit szeretne megtartani?
@@ -224,7 +226,7 @@ if st.session_state["name"]:
                     pass
 
                 st.write("adózás utáni összeg: " + str(st.session_state["amount"]*(1-tax_rate)))
-                st.number_input("Mennyit tartanál meg belőle?",min_value= int(st.session_state["amount"]*(1-tax_rate)), max_value= st.session_state["amount"], key="final")
+                st.number_input("Mennyit akarsz a jövedelmedből kézhez kapni?",min_value= int(st.session_state["amount"]*(1-tax_rate)), max_value= st.session_state["amount"], key="final")
                 submitted = st.form_submit_button("Submit")
                 st.session_state["stolen_money"] = st.session_state["final"] > st.session_state["amount"]*(1-tax_rate)
                 if submitted:
